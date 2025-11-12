@@ -1,0 +1,14 @@
+torch >= 1.5.0
+carla == 0.9.15
+numpy
+pygame
+numba
+h5py
+matplotlib
+opencv-python
+pyyaml
+imageio
+flowvis
+tqdm
+engineering-notation
+screeninfo
