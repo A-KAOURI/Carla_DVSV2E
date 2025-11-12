@@ -1,1 +1,57 @@
+# ===============================================================================================================
+# GLOBAL CONFIGURATION
+# ===============================================================================================================
+# This configuration file defines all major runtime settings for the simulation,
+# including data collection, CARLA client parameters, traffic management,
+# simulation behavior, and sensor configuration.
+#
+# Adjust the values below as needed for your environment and experiment setup.
+# ===============================================================================================================
 
+
+# DATA COLLECTION SETTINGS
+collector:
+  save_dir: "./SAVED_DATA"            # Directory where collected data will be saved.
+  random_seed: null                   # Random seed for deterministic behavior.
+
+
+# CLIENT SETTINGS
+client:
+  host: 127.0.0.1                     # CARLA server host address (default: localhost).
+  port: 2000                          # CARLA server port (default: 2000).
+  timeout: 10                         # Timeout in seconds for server responses.
+
+
+# TRAFFIC MANAGER SETTINGS
+traffic_manager:
+  safe: False                         # If True, enables "safe mode" for NPC vehicles.
+  tm_port: 8000                       # Port used by the Traffic Manager (default: 8000).
+  hybrid: False                       # If True, enables hybrid physics mode for improved performance.
+  respawn: False                      # If True, allows pedestrians/vehicles to respawn when idle or out of range.
+
+
+# SIMULATION SETTINGS
+simulation:
+  synchronous: True                   # Run simulation in synchronous mode (recommended for reproducibility).
+  timestep: 0.1                       # Simulation timestep in seconds (defines the frequency of sensor updates).
+  v2e_enabled: True                   # Enable V2E (Vision-to-Event) mode for event-based camera simulation.
+  v2e_multiplier: 20                  # Frequency multiplier for the V2E conversion process.
+  v2e_visualize : True                # Visualize generated events as an event image.
+  no_rendering: True                  # Disable rendering (for faster, headless simulations).
+  hero: "vehicle.audi.tt"             # Blueprint ID of the ego (main) vehicle.
+  filterv: "vehicle.*"                # Vehicle blueprint filter pattern.
+  generationv: all                    # Vehicle generation (use 'all' for all available).
+  filterw: "walker.pedestrian.*"      # Walker (pedestrian) blueprint filter pattern.
+  generationw: all                    # Pedestrian generation (use 'all' for all available).
+  traffic_lights_off : True           # Turn all traffic lights off
+
+# SENSOR SETTINGS
+sensors:
+  location:                           # Sensor position relative to the hero vehicle.
+    x: 1.0
+    y: 0.0
+    z: 1.5
+
+  resolution:                         # Output image resolution (in pixels).
+    height: 480                       # Image height.
+    width: 640                        # Image width.
