@@ -1,0 +1,131 @@
+# ===============================================================================================================
+# SCENARIO DEFINITION 
+# ===============================================================================================================
+# This section defines a set of Scenarios for the simulation.
+# You can specify which map (town) to load, how many vehicles in the map, how
+# many pedestrians and how they behave, configure the wather, and the duration
+# of each recorded scenario.
+#
+# ------------------------------------------------------------------------------
+# FIELD SYNTAX
+# ------------------------------------------------------------------------------
+# Each scenario is defined in a field named "Senario n" (must respect the case),
+# where n is the identification number of the scenario
+# "Scenario 1" below is an example.
+# 
+# ------------------------------------------------------------------------------
+# MAP SETTINGS
+# ------------------------------------------------------------------------------
+# The "map" field selects which CARLA town to load.
+# Example:
+#   map: Town03
+#
+# Available maps: https://carla.readthedocs.io/en/0.9.15/core_map/#:~:text=map.to_opendrive()-,CARLA%20maps,-There%20are%20eight
+#   - Town01
+#   - Town02
+#   - Town03
+#   - Town04
+#   - Town05
+#   - Town06
+#   - Town07
+#   - Town10HD
+#
+# Note:
+#   Some maps (especially HD maps like Town10HD) are not included in the base
+#   CARLA installation and must be downloaded separately.
+#   Custom maps can also be used if properly installed in CARLA.
+#
+# ------------------------------------------------------------------------------
+# WEATHER SETTINGS
+# ------------------------------------------------------------------------------
+# You can specify either a weather preset or custom weather parameters.
+#
+# Example (preset only):
+#   weather_preset: ClearNoon
+#
+# Available weather presets: https://carla.readthedocs.io/en/0.8.4/carla_settings/#:~:text=Settings%20example.-,Weather%20presets,-The%20weather%20and
+#   
+#    - ClearNight
+#    - ClearNoon
+#    - ClearSunset
+#    - CloudyNight
+#    - CloudyNoon
+#    - CloudySunset
+#    - Default
+#    - DustStorm
+#    - HardRainNight
+#    - HardRainNoon
+#    - HardRainSunset
+#    - MidRainSunset
+#    - MidRainyNight
+#    - MidRainyNoon
+#    - SoftRainNight
+#    - SoftRainNoon
+#    - SoftRainSunset
+#    - WetCloudyNight
+#    - WetCloudyNoon
+#    - WetCloudySunset
+#    - WetNight
+#    - WetNoon
+#    - WetSunset
+#
+# ------------------------------------------------------------------------------
+# CUSTOM WEATHER OVERRIDES
+# ------------------------------------------------------------------------------
+# You can override any weather parameters individually using the "weather_settings" section.
+# If both "weather_preset" and "weather_settings" are defined, the fields in "weather"
+# override those from the preset.
+#
+# ===============================================================================================================
+
+Scenario 1:
+  name : T10_ClearNoon
+  map : Town10HD
+  number_of_vehicles : 0
+  number_of_walkers : 0
+  walkers_run_percent : 0.0
+  walkers_cross_percent : 0.0
+  seed_walkers : 0
+  weather_preset : ClearNoon
+  weather_settings :
+    # sun_azimuth_angle : -90.0
+    # sun_altitude_angle : 45.0
+    # cloudiness : 8.0
+    # precipitation : 0.0
+    # precipitation_deposits: 0.0
+    # wind_intensity : 20.0
+    # fog_density : 0.1
+    # wetness : 0.0
+    # fog_falloff : 0.0
+    # scattering_intensity : 0.0
+    # mie_scattering_scale : 0.0
+    # rayleigh_scattering_scale : 0.0
+    # dust_storm : 0.0
+  car_lights_on : False
+  simulated_seconds : 120
+
+Scenario 2:
+  name : T10_ClearSunset
+  map : Town10HD
+  number_of_vehicles : 0
+  number_of_walkers : 0
+  walkers_run_percent : 0.0
+  walkers_cross_percent : 0.0
+  seed_walkers : 0
+  weather_preset : ClearSunset
+  weather_settings : null
+  car_lights_on : False
+  simulated_seconds : 120
+
+Scenario 3:
+  name : T10_ClearNight
+  map : Town10HD
+  number_of_vehicles : 0
+  number_of_walkers : 0
+  walkers_run_percent : 0.0
+  walkers_cross_percent : 0.0
+  seed_walkers : 0
+  weather_preset : ClearNight
+  weather_settings : null
+  car_lights_on : True
+  simulated_seconds : 120

@@ -1,0 +1,32 @@
+# ===============================================================================================================
+# V2E CONFIGURATION
+# ===============================================================================================================
+# See : https://github.com/SensorsINI/v2e for further details
+#
+# ===============================================================================================================
+
+
+## DVS parameters :
+pos_thres: 0.2                  # DVS ON threshold nominal value (log intensity)
+neg_thres: 0.2                  # DVS OFF threshold nominal value (log intensity)
+sigma_thres: 0.03               # Pixel-to-pixel Gaussian variation of thresholds
+cutoff_hz: 0.0                  # Photoreceptor IIR low‑pass filter cutoff (Hz)
+leak_rate_hz: 0.1               # Leak noise event rate per pixel (Hz)
+shot_noise_rate_hz: 0.0         # Temporal “shot” noise event rate in darkest scene areas
+photoreceptor_noise: false      # Use Gaussian photoreceptor noise instead of shot noise
+leak_jitter_fraction: 0.1       # Jitter fraction of leak noise timing relative to FP noise model
+noise_rate_cov_decades: 0.1     # Pixel noise-rate variation in log-normal decades (only for leak)
+refractory_period_s: 0.005      # Per-pixel refractory period (s); events within this window are ignored}
+## Additional model toggles
+# scidvs: false                   # Enables SCIDVS pixel model (nonlinear adaptation & gain)
+
+# Simulation :
+seed: 0                           # Random seed (0 = no fixed seed)
+show_dvs_model_state: null        # Show internal model states: baseLogFrame, lpLogFrame, diff_frame, etc.
+save_dvs_model_state: false       # Save any shown model-state as AVI files
+record_single_pixel_states: null  # Specify (x,y) as tuple to record state time series
+
+# hdr: false                        # HDR mode (skip lin-log conversion)
+device: "cuda"                    # Compute device selection (“cuda” recommended)
+cs_lambda_pixels: null            # Center-surround spatial constant (pixels); disabling = null}
+cs_tau_p_ms: null                 # Photoreceptor time constant for surround (ms); zero = instantaneous}

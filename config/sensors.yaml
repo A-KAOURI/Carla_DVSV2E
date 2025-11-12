@@ -1,0 +1,73 @@
+# ===============================================================================================================
+# SENSORS CONFIGURATION
+# ===============================================================================================================
+# Define and configure sensors here !
+#
+# At least RGB_hfps (if V2E is enabled) or RGB must be defined for the
+# simulation to work.
+# 
+# A callback function must be defined for each sensor in "callbacks.py" and
+# assigned to it in the "callback" field.
+#
+# ===============================================================================================================
+
+
+RGB_hfps:
+  # Dedicated high fps RGB sensor for V2E event simulation
+  blueprint_name : "sensor.camera.rgb"
+  enable : True
+  visualize : False
+  callback: rgb_hfps_callback
+ 
+  settings:
+    blur_amount : 0.0
+    motion_blur_intensity : 0.0
+    motion_blur_max_distortion : 0.0
+    shutter_speed : 1000.0
+
+RGB:
+  blueprint_name : "sensor.camera.rgb"
+  enable : True
+  visualize : False
+  callback: rgb_callback
+
+  settings:
+    ## Carla sensor settings (optional)
+    # image_size_x: 640
+    # image_size_y: 480
+
+OPTICAL_FLOW:
+  blueprint_name : "sensor.camera.optical_flow"
+  enable : False
+  visualize : False
+  settings:
+  callback: flow_callback
+  
+SEMANTIC_SEGMENTATION:
+  blueprint_name : "sensor.camera.semantic_segmentation"
+  enable : False
+  visualize : False
+  settings:
+  callback: segmentation_callback
+
+INSTANCE_SEGMENTATION:
+  blueprint_name : "sensor.camera.instance_segmentation"
+  enable: False
+  visualize: False
+  settings:
+  callback: segmentation_callback
+
+DEPTH_CAMERA:
+  blueprint_name : "sensor.camera.depth"
+  enable : False
+  visualize : False
+  settings:
+  callback: depth_callback
+
+DVS:
+  blueprint_name : "sensor.camera.dvs"
+  enable : False
+  visualize : False
+  settings:
+  callback: dvs_callback
+
