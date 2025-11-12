@@ -36,9 +36,9 @@ from functools import partial
 from tqdm import tqdm
 import weakref
 
-import callbacks
-from v2e.emulator import EventEmulator
-from visualization import events_to_event_image
+from . import callbacks
+from .v2e.emulator import EventEmulator
+from .visualization import events_to_event_image
 
 
 
@@ -638,5 +638,6 @@ class DataRecorder():
             # Destroy all walkers
             print('\ndestroying %d walkers' % len(self.walkers_list))
             self.client.apply_batch([carla.command.DestroyActor(x) for x in self.all_id])
+
 
             time.sleep(3)
