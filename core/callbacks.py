@@ -3,7 +3,7 @@ import numpy as np
 
 import imageio.v2 as imageio
 from flow_vis import flow_uv_to_colors
-from visualization import events_to_event_image
+from .visualization import events_to_event_image
 from carla import ColorConverter as cc
 
 import weakref
@@ -166,4 +166,5 @@ def depth_callback(image, recorder, sensor):
     vis_dir = recorder.visual_dirs[sensor]
     if vis_dir is not None:
         frame_filename = '{:06d}.png'.format(frame)
+
         image.save_to_disk(str(vis_dir / frame_filename), carla.ColorConverter.LogarithmicDepth)
