@@ -1,11 +1,11 @@
-# CARLA Simulation Data Collection Tool
+# CARLA Simulation Data Collection Framework
 
 This project provides a configurable tool for running and recording simulations in CARLA, using YAML-based configuration files to define simulation parameters, scenarios, and sensors.
 
 --------------------------------------------------------------------------------
 ## 🚀 Overview
 
-This tool allows you to:
+This framework allows you to:
 
 - Define simulation global settings (client, traffic manager, simulation mode, etc.)
 - Configure multiple scenarios (maps, weather, number of actors, etc.)
@@ -90,3 +90,4 @@ Refer to CARLA’s license terms for usage restrictions:
 https://carla.readthedocs.io/en/latest/about/
 
 --------------------------------------------------------------------------------
+
